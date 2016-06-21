@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo "-----> Installing S3"
+
+set -e
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+
+mkdir -p $CACHE_DIR
+mkdir -p $BUILD_DIR
+
+curl -s -L -o $CACHE_DIR/s3.tar.gz https://github.com/fransr/s3-bash/archive/master.tar.gz
+cd $CACHE_DIR
+tar xf s3.tar.gz
+mv s3-bash-master s3-bash
+
+mv $CACHE_DIR/s3-bash $BUILD_DIR
+
+
+echo "-----> S3 Installed"
