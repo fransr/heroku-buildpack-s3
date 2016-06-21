@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "S3"
+exit 0;
